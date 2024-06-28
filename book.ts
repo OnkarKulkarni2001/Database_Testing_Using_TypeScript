@@ -13,11 +13,11 @@ export interface Book {
 
 export async function updateBook(book: Book): Promise<void> {
     const client = new Client({
-        user: 'postgres',           // Default username
-        host: '172.18.0.3',          // Default host
-        database: 'online_bookstore', // Database name
-        password: 'password',  // Replace with the password you set during installation
-        port: 5432,                 // Default port
+        user: 'postgres',           
+        host: '172.18.0.3',        
+        database: 'online_bookstore', 
+        password: 'password',  
+        port: 5432,                 
     });
 
     await client.connect();
