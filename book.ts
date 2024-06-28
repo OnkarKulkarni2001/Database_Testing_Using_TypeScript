@@ -13,11 +13,11 @@ export interface Book {
 
 export async function updateBook(book: Book): Promise<void> {
     const client = new Client({
-        user: 'postgres',           
-        host: '172.18.0.3',        
-        database: 'online_bookstore', 
-        password: 'password',  
-        port: 5432,                 
+        user: 'postgres',
+        host: '172.18.0.3',
+        database: 'online_bookstore',
+        password: 'password',
+        port: 5432,
     });
 
     await client.connect();
@@ -30,14 +30,17 @@ export async function updateBook(book: Book): Promise<void> {
     const values = [book.title, book.genre, book.publish_date, book.author_id, book.publisher_id, book.format, book.price, book.book_id];
 
     try {
-        await client.query(query, values);
-        console.log('Book updated successfully');
+        console.log('Executing query:', query);
+        console.log('With values:', values);
+
+        const res = await client.query(query, values);
+        console.log('Book updated successfully', res.rowCount); // Add rowCount for debugging
     } catch (err) {
-	if (err instanceof Error) {
-		console.error('Error updating book', err.stack);
-	} else {
-		console.error('Unexpected error', err);
-	}
+        if (err instanceof Error) {
+            console.error('Error updating book', (err as Error).stack); // Type assertion
+        } else {
+            console.error('Unexpected error', err);
+        }
     } finally {
         await client.end();
     }
