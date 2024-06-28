@@ -11,13 +11,10 @@ Michael Lannigan ()
 ## Tables & Attributes required
 **Table Name - Authors**
 
-**Attribute & Type**
-
-author_id - INTEGER(PK)
-
-name - VARCHAR
-
-bio - TEXT
-
-birth_date - DATE
+| Attributes | Types |
+| -----------| ----- |
+| author_id | INTEGER(PK) |
+| name | VARCHAR |
+| bio | TEXT |
+| birth_date | DATE |
 
