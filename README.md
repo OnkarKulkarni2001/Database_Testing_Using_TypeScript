@@ -2,11 +2,11 @@
 Midterm of Database Testing
 
 ## Team Duties
-Onkar Parag Kulkarni (8973145) 
+Typescript interface and CRUD operations - Onkar Parag Kulkarni (8973145) 
 
-Kaushik Tadhani ()
+Database schema design and initial data insertion - Kaushik Tadhani ()
 
-Michael Lannigan (8981339)
+Database integration testing - Michael Lannigan (8981339)
 
 ## Tables & Attributes required
 **Table Name - Authors**
