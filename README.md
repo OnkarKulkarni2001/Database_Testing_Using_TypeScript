@@ -92,3 +92,82 @@ CREATE DATABASE online_bookstore
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 ```
+
+## Authors Table Creation Query
+```
+CREATE TABLE Authors (
+    author_id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    bio TEXT,
+    birth_date DATE
+);
+```
+
+## Publishers Table Creation Query
+```
+CREATE TABLE Publishers (
+    publisher_id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    address VARCHAR(255),
+    contact_email VARCHAR(255)
+);
+```
+
+## Books Table Creation Query
+```
+CREATE TABLE Books (
+    book_id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    genre VARCHAR(100),
+    publish_date DATE,
+    author_id INTEGER REFERENCES Authors(author_id),
+    publisher_id INTEGER REFERENCES Publishers(publisher_id),
+    format VARCHAR(50),
+    price DECIMAL(10, 2)
+);
+```
+
+## Customers Table Creation Query
+```
+CREATE TABLE Customers (
+    customer_id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255),
+    phone VARCHAR(20),
+    join_date DATE
+);
+```
+
+## Orders Table Creation Query
+```
+CREATE TABLE Orders (
+    order_id SERIAL PRIMARY KEY,
+    customer_id INTEGER REFERENCES Customers(customer_id),
+    order_date DATE,
+    total_amount DECIMAL(10, 2)
+);
+```
+
+## OrderItems Table Creation Query
+```
+CREATE TABLE OrderItems (
+    order_item_id SERIAL PRIMARY KEY,
+    order_id INTEGER REFERENCES Orders(order_id),
+    book_id INTEGER REFERENCES Books(book_id),
+    quantity INTEGER,
+    unit_price DECIMAL(10, 2)
+);
+```
+
+## Reviews Table Creation Query
+```
+CREATE TABLE Reviews (
+    review_id SERIAL PRIMARY KEY,
+    book_id INTEGER REFERENCES Books(book_id),
+    customer_id INTEGER REFERENCES Customers(customer_id),
+    review_date DATE,
+    rating INTEGER,
+    comment TEXT
+);
+```
+
