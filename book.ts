@@ -34,10 +34,10 @@ export async function updateBook(book: Book): Promise<void> {
         console.log('With values:', values);
 
         const res = await client.query(query, values);
-        console.log('Book updated successfully', res.rowCount); // Add rowCount for debugging
+        console.log('Book updated successfully', res.rowCount); 
     } catch (err) {
         if (err instanceof Error) {
-            console.error('Error updating book', (err as Error).stack); // Type assertion
+            console.error('Error updating book', (err as Error).stack); 
         } else {
             console.error('Unexpected error', err);
         }
