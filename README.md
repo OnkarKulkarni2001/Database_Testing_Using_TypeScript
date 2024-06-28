@@ -78,3 +78,17 @@ Michael Lannigan ()
 | review_date | DATE |
 | rating | INTEGER |
 | comment | TEXT |
+
+## Database Creation Query
+```
+CREATE DATABASE online_bookstore
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'en_US.utf8'
+    LC_CTYPE = 'en_US.utf8'
+    LOCALE_PROVIDER = 'libc'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+```
