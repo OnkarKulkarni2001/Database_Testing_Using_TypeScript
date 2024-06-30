@@ -79,22 +79,12 @@ Database integration testing - Michael Lannigan (8981339)
 | rating | INTEGER |
 | comment | TEXT |
 
-## Database Creation Query
+
+
+## Table Creation Query
 ```
 CREATE DATABASE online_bookstore
-    WITH
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    LC_COLLATE = 'en_US.utf8'
-    LC_CTYPE = 'en_US.utf8'
-    LOCALE_PROVIDER = 'libc'
-    TABLESPACE = pg_default
-    CONNECTION LIMIT = -1
-    IS_TEMPLATE = False;
-```
 
-## Authors Table Creation Query
-```
 -- Create author table
 CREATE TABLE Authors (
     author_id SERIAL PRIMARY KEY,
