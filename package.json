@@ -1,0 +1,33 @@
+{
+  "name": "mid-term-book-store-project-group-13",
+  "version": "1.0.0",
+  "description": "Midterm of Database Testing",
+  "main": "main.js",
+  "scripts": {
+    "start": "ts-node main.ts",
+    "dev": "nodemon main.ts",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OnkarKulkarni2001/Midterm_Database_Testing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OnkarKulkarni2001/Midterm_Database_Testing/issues"
+  },
+  "homepage": "https://github.com/OnkarKulkarni2001/Midterm_Database_Testing#readme",
+  "dependencies": {
+    "@types/pg": "^8.11.6",
+    "express": "^4.19.2",
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.9",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2"
+  }
+}
