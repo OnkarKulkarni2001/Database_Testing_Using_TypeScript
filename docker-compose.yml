@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  reverse-proxy:
+    image: nginx:stable-alpine
+    volumes:
+      - ./config/nginx/:/etc/nginx/conf.d/
+    ports:
+      - 80:80
+    depends_on:
+      - backend
+    networks:
+      web-services:
+        aliases:
+          - backend.${BACKEND_DOMAIN:-127-0-0-1.sslip.io}
+
+  backend:
+    build: backend
+    networks:
+      - web-services
+
+networks:
+  web-services:

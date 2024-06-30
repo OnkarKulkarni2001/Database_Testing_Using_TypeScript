@@ -1,13 +1,13 @@
 import cors from "cors";
 import express, { json } from "express";
-import FlatfilePersistence from "./strategy/flatfile";
+import FlatfilePersistenceService from "./FlatfilePersistenceService";
 
 (async () => {
   const app = express();
   app.use(cors());
   app.use(json());
 
-  const flatfilePersistence = new FlatfilePersistence();
+  const flatfilePersistence = new FlatfilePersistenceService();
 
   app.post("/flatfile/create/:tableId", (req, res) => {
     const { params } = req;
