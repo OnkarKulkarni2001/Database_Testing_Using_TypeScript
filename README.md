@@ -260,7 +260,7 @@ VALUES
     (4, 8, '2024-07-08', 3, 'It was alright.'),
     (5, 9, '2024-07-09', 4, 'Captivating from start to finish.');
 
-
+-- Power writers (authors) with more than 1 books in the same genre published within the last 1 years 
 SELECT a.author_id, a.name, a.bio, b.genre, COUNT(*) AS book_count
 FROM Authors a
 JOIN Books b ON a.author_id = b.author_id
@@ -268,6 +268,8 @@ WHERE b.publish_date >= NOW() - INTERVAL '1 years'
 GROUP BY a.author_id, a.name, a.bio, b.genre
 HAVING COUNT(*) > 1;
 
+
+-- Loyal Customers who has spent more than 120 dollars in the last year
 SELECT c.customer_id, c.name, c.email, c.phone, c.join_date, SUM(o.total_amount) AS total_spent
 FROM Customers c
 JOIN Orders o ON c.customer_id = o.customer_id
@@ -275,13 +277,17 @@ WHERE o.order_date >= NOW() - INTERVAL '1 year'
 GROUP BY c.customer_id
 HAVING SUM(o.total_amount) > 120;
 
-SELECT b.title, b.genre, b.publish_date, a.name AS author_name, b.format, b.price, AVG(r.rating)
+
+-- Well Reviewed books that has a better user rating than average
+SELECT b.book_id, b.title, b.genre, b.publish_date, a.name AS author_name, b.format, b.price, AVG(r.rating)
 FROM Books b
 JOIN Authors a ON b.author_id = a.author_id
 JOIN Reviews r ON b.book_id = r.book_id
 GROUP BY b.book_id, a.name
 HAVING AVG(r.rating) > (SELECT AVG(rating) FROM Reviews);
 
+
+-- The most popular genre by sales
 SELECT b.genre, SUM(oi.quantity) AS total_sales
 FROM Books b
 JOIN OrderItems oi ON b.book_id = oi.book_id
@@ -289,6 +295,7 @@ GROUP BY b.genre
 ORDER BY total_sales DESC;
 
 
+-- The 10 most recent posted reviews by Customers 
 SELECT c.customer_id, c.name AS customer_name, b.title AS book_title, r.review_date, r.rating, r.comment
 FROM Reviews r
 JOIN Customers c ON r.customer_id = c.customer_id
