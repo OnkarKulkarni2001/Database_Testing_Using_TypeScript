@@ -1,6 +1,6 @@
 import { Client } from 'pg';
 
-interface Customer {
+export interface Customer {
     customer_id?: number; // Optional for insert operations (auto-generated)
     name: string;
     email: string;
