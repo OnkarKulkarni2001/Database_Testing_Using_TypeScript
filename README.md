@@ -43,7 +43,7 @@ https://github.com/OnkarKulkarni2001/Midterm_Database_Testing.git
 | publish_date | DATE | Date when the book was published |
 | author_id | INTEGER(FK) | Foreign key referencing authors table |
 | publisher_id | INTEGER(FK) | Foreign key referencing publishers table |
-| format | VARCHAR | Format of the book (e.g., e-book)
+| format | VARCHAR | Format of the book (e.g. e-book)
 | price | DECIMAL | Price of the book |
 
 **Table Name - Customers**
