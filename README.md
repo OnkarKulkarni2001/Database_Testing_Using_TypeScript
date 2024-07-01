@@ -90,7 +90,7 @@ https://github.com/OnkarKulkarni2001/Midterm_Database_Testing.git
 
 ## Table Creation Query
 ```
-CREATE DATABASE online_bookstore
+CREATE DATABASE mid_term_project_book_store
 
 -- Create author table
 CREATE TABLE Authors (
