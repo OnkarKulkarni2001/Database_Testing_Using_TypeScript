@@ -17,73 +17,73 @@ https://github.com/OnkarKulkarni2001/Midterm_Database_Testing.git
 ## Tables & Attributes required
 **Table Name - Authors**
 
-| Attributes | Types |
-| -----------| ----- |
-| author_id | INTEGER(PK) |
-| name | VARCHAR |
-| bio | TEXT |
-| birth_date | DATE |
+| Attributes | Types | Description |
+| -----------| ----- | ----------- | 
+| author_id | INTEGER(PK) | Primary key of the author |
+| name | VARCHAR | Name of the author |
+| bio | TEXT | Biography or information about the author |
+| birth_date | DATE | Date of birth of the author |
 
 **Table Name - Publishers**
 
-| Attributes | Types |
-| ---------- | ----- |
-| publisher_id | INTEGER(PK) |
-| name | VARCHAR |
-| address | VARCHAR |
-| contact_email | VARCHAR |
+| Attributes | Types | Description|
+| ---------- | ----- |-----------|
+| publisher_id | INTEGER(PK) | Primary key of the publisher |
+| name | VARCHAR | Name of the publisher |
+| address | VARCHAR | Address of the publisher |
+| contact_email | VARCHAR | Contact email of the publisher |
 
 **Table Name - Books**
 
-| Attributes | Types |
-| ---------- | ----- |
-| book_id | INTEGER(PK) |
-| title | VARCHAR |
-| genre | VARCHAR |
-| publish_date | DATE |
-| author_id | INTEGER(FK) |
-| publisher_id | INTEGER(FK) |
-| format | VARCHAR |
-| price | DECIMAL |
+| Attributes | Types | Description |
+| ---------- | ----- | ------------ |
+| book_id | INTEGER(PK) | Primary key of the book |
+| title | VARCHAR | Title of the book |
+| genre | VARCHAR | Genre of the book |
+| publish_date | DATE | Date when the book was published |
+| author_id | INTEGER(FK) | Foreign key referencing authors table |
+| publisher_id | INTEGER(FK) | Foreign key referencing publishers table |
+| format | VARCHAR | Format of the book (e.g., e-book)
+| price | DECIMAL | Price of the book |
 
 **Table Name - Customers**
 
-| Attributes | Types |
-| ---------- | ----- |
-| customer_id | INTEGER(PK) |
-| name | VARCHAR |
-| email | VARCHAR |
-| phone | VARCHAR |
-| join_date | DATE |
+| Attributes | Types | Description |
+| ---------- | ----- | ------------ |
+| customer_id | INTEGER(PK) | Primary key of the customer |
+| name | VARCHAR | Name of the customer |
+| email | VARCHAR | Email address of the customer |
+| phone | VARCHAR | Phone number of the customer |
+| join_date | DATE | Date when the customer joined |
 
 **Table Name - Orders**
 
-| Attributes | Types |
-| ---------- | ----- |
-| order_id | INTEGER(PK) |
-| customer_id | INTEGER(FK) |
-| order_date | DATE |
-| total_amount | DECIMAL |
+| Attributes | Types | Description |
+| ---------- | ----- | ------------ |
+| order_id | INTEGER(PK) | 	Primary key of the order |
+| customer_id | INTEGER(FK) | Foreign key referencing customers table |
+| order_date | DATE | Date when the order was placed |
+| total_amount | DECIMAL | Total amount of the order |
 
 **Table Name - OrderItems**
 
-| Attributes | Types |
-| ---------- | ----- |
-| order_item_id | INTEGER(PK) |
-| order_id | INTEGER(FK) |
-| book_id | INTEGER(FK) |
-| quantity | INTEGER |
-| unit_price | DECIMAL |
+| Attributes | Types | Description |
+| ---------- | ----- | ------------ |
+| order_item_id | INTEGER(PK) | Primary key of the order item |
+| order_id | INTEGER(FK) | Foreign key referencing orders table |
+| book_id | INTEGER(FK) | Foreign key referencing books table |
+| quantity | INTEGER | Quantity of the book ordered |
+| unit_price | DECIMAL | Unit price of the book |
 
 **Table Name - Reviews**
-| Attributes | Types |
-| ---------- | ----- |
-| review_id | INTEGER(PK) |
-| book_id | INTEGER(FK) |
-| customer_id | INTEGER(FK) |
-| review_date | DATE |
-| rating | INTEGER |
-| comment | TEXT |
+| Attributes | Types | Description |
+| ---------- | ----- |  ------------ |
+| review_id | INTEGER(PK) | Primary key of the review |
+| book_id | INTEGER(FK) | Foreign key referencing books table |
+| customer_id | INTEGER(FK) | Foreign key referencing customers table |
+| review_date | DATE | Date when the review was submitted |
+| rating | INTEGER | Rating given in the review |
+| comment | TEXT | Comment or review text |
 
 
 
