@@ -20,10 +20,11 @@ const swaggerOptions = {
             description: 'API for managing customers',
         },
     },
-    apis: ['main.ts'], // Replace with your actual filename
+    apis: ['main.ts'],
 };
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+app.use('/', swaggerUi.serve);
+app.get('/', swaggerUi.setup(swaggerDocs));
 
 // Middleware to handle database connection
 app.use(async (req, res, next) => {

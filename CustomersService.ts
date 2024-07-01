@@ -1,7 +1,7 @@
 import { Client } from 'pg';
 
 export interface Customer {
-    customer_id?: number; // Optional for insert operations (auto-generated)
+    customer_id?: number; 
     name: string;
     email: string;
     phone: string;
@@ -18,7 +18,7 @@ class CustomersService {
             host: 'localhost',
             database: "mid_term_project_book_store",
             password: "password",
-            port: 5432,  // Default PostgreSQL port
+            port: 5432,  
         });
         this.connected = false;
     }
