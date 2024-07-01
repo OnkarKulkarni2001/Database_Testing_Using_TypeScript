@@ -474,3 +474,32 @@ class CustomersService {
 
 export default CustomersService;
 ```
+
+## To run the TypeScript's CURD interface
+
+#### Run the image PostgreSQL and pgAdmin image
+
+```
+docker-compose up -d
+```
+
+Run the node project.
+
+```
+npm run dev
+```
+Navigate to below link to perform CURD operation.
+```
+[http://localhost:3000](http://localhost:3000)
+```
+
+## References:
+
+[https://stackoverflow.com/questions/59540432/how-to-mock-postgresql-pg-in-node-js-using-jest](https://stackoverflow.com/questions/59540432/how-to-mock-postgresql-pg-in-node-js-using-jest)
+
+[https://blog.logrocket.com/crud-rest-api-node-js-express-postgresql/](https://blog.logrocket.com/crud-rest-api-node-js-express-postgresql/)
+
+[https://medium.com/nerd-for-tech/testing-typescript-with-jest-290eaee9479d](https://medium.com/nerd-for-tech/testing-typescript-with-jest-290eaee9479d)
+
+[https://medium.com/@samuelnoye35/simplifying-api-development-in-node-js-with-swagger-a5021ac45742](https://medium.com/@samuelnoye35/simplifying-api-development-in-node-js-with-swagger-a5021ac45742)
+
