@@ -8,6 +8,9 @@ Typescript interface and CRUD operations -Kaushik Tadhani (8955406)
 
 Database integration testing - Michael Lannigan (8981339)
 
+## Github Link
+https://github.com/OnkarKulkarni2001/Midterm_Database_Testing.git
+
 ## Tables & Attributes required
 **Table Name - Authors**
 
