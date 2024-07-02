@@ -1,5 +1,5 @@
 import { Client } from 'pg';
-import CustomersService, { Customer } from './CustomersService'; // Adjust the import path as per your project structure
+import CustomersService, { Customer } from './CustomersService';
 
 // Mocking PostgreSQL client for testing purposes
 jest.mock('pg', () => {
@@ -15,16 +15,16 @@ jest.mock('pg', () => {
 
 describe('CustomersService', () => {
     let service: CustomersService;
-    let mockClient: any; // Mocked PostgreSQL client
+    let mockClient: any; 
 
     beforeEach(() => {
         mockClient = new Client();
         service = new CustomersService();
-        service['client'] = mockClient; // Assign mock client to service
+        service['client'] = mockClient;
     });
 
     afterEach(() => {
-        jest.clearAllMocks(); // Clear mock function call history after each test
+        jest.clearAllMocks(); 
     });
 
     it('should create a new customer', async () => {
@@ -35,7 +35,6 @@ describe('CustomersService', () => {
             join_date: new Date(),
         };
 
-        // Mock the return value of PostgreSQL query
         mockClient.query.mockResolvedValueOnce({ rows: [{ customer_id: 1 }] });
 
         const customerId = await service.create(mockCustomer);
@@ -57,7 +56,6 @@ describe('CustomersService', () => {
             join_date: new Date(),
         };
 
-        // Mock the return value of PostgreSQL query
         mockClient.query.mockResolvedValueOnce({ rows: [mockCustomer] });
 
         const foundCustomer = await service.findById(customerId);
@@ -72,7 +70,6 @@ describe('CustomersService', () => {
             { customer_id: 2, name: 'Customer 2', email: 'customer2@gmail.com', phone: '2222222222', join_date: new Date() },
         ];
 
-        // Mock the return value of PostgreSQL query
         mockClient.query.mockResolvedValueOnce({ rows: mockCustomers });
 
         const allCustomers = await service.getAll();
