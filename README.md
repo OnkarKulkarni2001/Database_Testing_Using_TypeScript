@@ -1,6 +1,3 @@
-# Midterm_Database_Testing
-Midterm of Database Testing
-
 ## Team Duties
 
 Group No: 13
